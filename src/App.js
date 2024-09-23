@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AppLayout from "./layout/AppLayout";
+import CreatorListPage from "./pages/CreatorListPage";
+import CreatorDetailPage from "./pages/CreatorDetailPage";
+import NewsPage from "./pages/NewsPage";
+import NotFoundPage from "./pages/NotFoundPage"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<AppLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="creators" index element={<CreatorListPage />} />
+        <Route path="creators/:type/:id" element={<CreatorDetailPage />} />
+        <Route path="news" index element={<NewsPage />} />
+      </Route>
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 }
 
