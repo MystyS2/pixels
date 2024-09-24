@@ -1,3 +1,17 @@
-nav, a{
+nav,
+a {
     background-color: black !important;
+}
+
+/* 링크의 기본 스타일 */
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 링크가 활성화되었을 때 스타일 */
+.active-link {
+    font-weight: bold;
+    color: white;
+    border-bottom: 2px solid white;
 }
