@@ -2,10 +2,10 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AppLayout from "./layout/AppLayout";
-import CreatorListPage from "./pages/CreatorListPage";
 import NewsPage from "./pages/NewsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AdminPage from "./pages/AdminPage";
+import CreatorListPage from "./pages/CreatorListPage/CreatorListPage";
 
 function App() {
   return (

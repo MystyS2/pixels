@@ -10,7 +10,8 @@ const AppLayout = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="dark text-foreground bg-background">
+    <div className="dark text-foreground bg-background flex flex-col h-screen">
+      {/* 헤더 */}
       <Navbar
         isBlurred={false}
         classNames={{
@@ -90,7 +91,11 @@ const AppLayout = () => {
           </Link>
         </NavbarContent>
       </Navbar>
-      <Outlet />
+
+      {/* 콘텐츠 영역 */}
+      <div className="flex-grow h-[calc(100vh-64px)] overflow-auto">
+        <Outlet />
+      </div>
     </div>
   );
 };
